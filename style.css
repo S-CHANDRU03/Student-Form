@@ -38,17 +38,19 @@ body {
   
   button {
     display: block;
-    width: 100%;
+    width: 200px;
+    margin-left: 300px;
     padding: 10px;
-    background-color: #28a745;
+    background-color: #266bff;
     color: white;
     border: none;
     border-radius: 4px;
     cursor: pointer;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
   }
   
   button:hover {
-    background-color: #218838;
+    background-color: #0e4bcf;
   }
   
   table {
@@ -57,30 +59,100 @@ body {
     margin-top: 20px;
   }
   
-  th, td {
-    padding: 10px;
-    text-align: left;
-    border-bottom: 1px solid #ddd;
+  #studentTable th{
+    background: rgb(215,215,215);
+    background: linear-gradient(0deg, rgba(215,215,215,1) 0%, rgba(204,204,204,1) 100%);
+    color: black;
+}
+#studentTable table,th,td{
+
+    border: 2px solid rgb(0, 0, 0);
+    padding: 5px;
+    text-align: center;
+    background-color: white;
+}
+
+#studentTable .tbody{
+  background-color: white;
+}
+
+#studentTable{
+
+    width: 100%;
+    border: 1px solid white;
+    border-collapse: collapse;
+
+}
+  
+  
+  #edit {
+    color: red;
+    cursor: pointer;
+    margin-right: 20px;
   }
   
-  th {
-    background-color: #f8f9fa;
-  }
-  
-  .actions button {
-    margin-right: 5px;
-    padding: 5px 10px;
-    border: none;
-    border-radius: 4px;
+  #trash {
+    color: red;
     cursor: pointer;
   }
+
+  .nameError,.ageError,.genderError,.courseError,.mailError{
+
+    color: red;
+    font-size: 12px;
+    display: none;
+}
+
+@media screen and (max-width:600px) {
+
+button {
+  display: block;
+  width: 200px;
+  margin-left: 125px;
+  padding: 10px;
+  background-color: #266bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+button:hover {
+  background-color: #0e4bcf;
+}
   
-  .actions .edit {
-    background-color: #ffc107;
-    color: black;
-  }
-  
-  .actions .delete {
-    background-color: #dc3545;
-    color: white;
-  }
+#studentTable th{
+    display: none;
+}
+#studentTable tbody,tr,td{
+    display: block;
+    width: 100%;
+    background-color: white;
+    
+}
+#studentTable tr{
+    margin-bottom: 15px;
+    
+}
+#studentTable tbody,tr,td{
+    text-align: right;
+    position: relative;
+    border-bottom: none;
+    border-top: none;
+}
+#studentTable td:last-child{
+    border-bottom: solid black 2px;
+}
+#studentTable td:first-child{
+  border-top: solid black 2px;
+}
+
+#studentTable td:before{
+    content: attr(data-label);
+    position: absolute;
+    left: 10px;
+    font-weight: 600;
+}
+
+
+}

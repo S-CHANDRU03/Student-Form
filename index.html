@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Student Registration Form</title>
   <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
   <div class="container">
@@ -12,31 +13,37 @@
     <form id="registrationForm">
       <div class="form-group">
         <label for="name">Name:</label>
-        <input type="text" id="name" name="name" required>
+        <input type="text" id="name" name="name" placeholder="Enter your name">
+        <span class="nameError">Name must contain only letters</span>
       </div>
       <div class="form-group">
         <label for="age">Age:</label>
-        <input type="number" id="age" name="age" required>
+        <input type="number" id="age" name="age" placeholder="Enter your age">
+        <span class="ageError">Age must contain only number</span>
       </div>
       <div class="form-group">
-        <label for="gender">Gender:</label>
-        <select id="gender" name="gender" required>
-          <option value="male">Male</option>
-          <option value="female">Female</option>
-          <option value="other">Other</option>
+        <label>Gender:</label>
+        <select id="gender">
+          <option name="gender" value="">Select Gender</option>
+          <option name="gender" value="male">Male</option>
+          <option name="gender" value="female">Female</option>
         </select>
+        <span class="genderError">Please select your gender</span>
       </div>
       <div class="form-group">
-        <label for="course">Course:</label>
-        <select id="course" name="course" required>
-          <option value="python">Python</option>
-          <option value="java">Java</option>
-          <option value="javascript">JavaScript</option>
+        <label>Course:</label>
+        <select id="course">
+          <option name="course" value="">Select Course</option>
+          <option name="course" value="python">Python</option>
+          <option name="course" value="java">Java</option>
+          <option name="course" value="javascript">JavaScript</option>
         </select>
+        <span class="courseError">Must select atleast one course</span>
       </div>
       <div class="form-group">
         <label for="email">Email:</label>
-        <input type="email" id="email" name="email" required>
+        <input type="email" id="email" name="email" placeholder="Enter your Email">
+        <span class="mailError">Please enter the valid Email</span>
       </div>
       <button type="submit">Submit</button>
     </form>
@@ -54,6 +61,15 @@
         </tr>
       </thead>
       <tbody>
+        <td data-label="Name:">S Chandru</td>
+        <td data-label="Age:">23</td>
+        <td data-label="Gender:">Male</td>
+        <td data-label="Course:">Python</td>
+        <td data-label="Email:">chandru123@gmail.com</td>
+        <td data-label="Action:">
+        <i id="edit" onclick="editRow(this)" class="fa-solid fa-user-pen"></i>
+        <i id="trash" onclick="deleteRow(this)" class="fa-solid fa-trash"></i>
+        </td>
         <!-- Rows will be added dynamically -->
       </tbody>
     </table>
