@@ -108,7 +108,7 @@ body {
 button {
   display: block;
   width: 200px;
-  margin-left: 125px;
+  margin-left: 60px;
   padding: 10px;
   background-color: #266bff;
   color: white;
@@ -126,9 +126,8 @@ button:hover {
 }
 #studentTable tbody,tr,td{
     display: block;
-    width: 100%;
-    background-color: white;
-    
+    width: 99%;
+    background-color: white;    
 }
 #studentTable tr{
     margin-bottom: 15px;
@@ -139,6 +138,7 @@ button:hover {
     position: relative;
     border-bottom: none;
     border-top: none;
+    border-radius: 5px;
 }
 #studentTable td:last-child{
     border-bottom: solid black 2px;
